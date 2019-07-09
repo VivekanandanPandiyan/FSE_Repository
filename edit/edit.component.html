@@ -1,0 +1,44 @@
+<div class="container">
+    <h1>Task Manager</h1>
+    <router-outlet></router-outlet>
+    <div class="form-horizontal">
+      <div class="form-group">
+        <label for="txtTask" class="col-xs-2 control-label">Task:</label>
+        <div class="col-xs-4">
+          <input type="text" id="txtTask" name="txtTask" [(ngModel)]="TaskName" required class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ranPriority" class="col-xs-2 control-label">Priority:</label>
+        <div class="col-xs-4">
+            <input type="range" class="slider" id="ranPriority" [(ngModel)]="Priority" required min="0" max="30" step="5" value="0">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="txtParentTask" class="col-xs-2 control-label">Parent Task:</label>
+        <div class="col-xs-4">
+          <input type="text" id="txtParentTask" name="txtParentTask" [(ngModel)]="ParentTask" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="txtSDate" class="col-xs-2 control-label">Start Date:</label>
+        <div class="col-xs-4">
+          <input type="date" id="txtSDate" name="txtSDate" [(ngModel)]="StartDate" required class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="txtEDate" class="col-xs-2 control-label">End Date:</label>
+        <div class="col-xs-4">
+          <input type="date" id="txtEDate" name="txtEDate" [(ngModel)]="EndDate" required class="form-control">
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label class="col-xs-2 control-label"></label>
+        <div class="col-xs-4">
+          <button class="btn btn-default" (click)='UpdateTask()'>Update</button>
+          <button class="btn btn-default" [routerLink]="['/view']" style="margin-left: 5px;">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
